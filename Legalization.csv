@@ -1,0 +1,51 @@
+State,Month_Passed,Year_Passed,Legal_Prior,Method
+Alabama,2,2015,True,court
+Alaska,10,2014,True,court
+Arizona,10,2014,True,court
+Arkansas,6,2015,False,supreme
+California,6,2013,True,court
+Colorado,10,2014,True,court
+Connecticut,11,2008,True,court
+Delaware,7,2013,True,legislature
+Florida,1,2015,True,court
+Georgia,6,2015,False,supreme
+Hawaii,12,2013,True,legislature
+Idaho,10,2014,True,court
+Illinois,6,2014,True,legislature
+Indiana,10,2014,True,court
+Iowa,4,2009,True,court
+Kansas,11,2014,True,court
+Kentucky,6,2015,False,supreme
+Louisiana,6,2015,False,supreme
+Maine,12,2012,True,popvote
+Maryland,1,2013,True,popvote
+Massachusetts,5,2004,True,court
+Michigan,6,2015,False,supreme
+Minnesota,8,2013,True,legislature
+Mississippi,6,2015,False,supreme
+Missouri,6,2015,False,supreme
+Montana,11,2014,True,court
+Nebraska,6,2015,False,supreme
+Nevada,10,2014,True,court
+New Hampshire,1,2010,True,legislature
+New Jersey,10,2013,True,court
+New Mexico,12,2013,True,court
+New York,6,2011,True,legislature
+North Carolina,10,2014,True,court
+North Dakota,6,2015,False,supreme
+Ohio,6,2015,False,supreme
+Oklahoma,10,2014,True,court
+Oregon,5,2014,True,court
+Pennsylvania,5,2014,True,court
+Rhode Island,8,2013,True,legislature
+South Carolina,11,2014,True,court
+South Dakota,6,2015,False,supreme
+Tennessee,6,2015,False,supreme
+Texas,6,2015,False,supreme
+Utah,10,2014,True,court
+Vermont,9,2009,True,legislature
+Virginia,10,2014,True,court
+Washington,12,2012,True,popvote
+West Virginia,10,2014,True,court
+Wisconsin,10,2014,True,court
+Wyoming,10,2014,True,court
