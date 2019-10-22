@@ -1,0 +1,32 @@
+
+## The Impact of same-sex legalization on state suicides rates
+
+#### Introduction
+
+On June 26th, 2015 the Supreme Court of the United States legalized same-sex marriage, continuing to make progress towards a society of equal opportunity. Discriminatory policies, such as unequal marriage opportunity, stymie the wellbeing of individuals by selectively constraining choice leading to an unequal opportunity to prosper. Lifting discriminatory policy promotes greater freedom of choice and thus improves outcomes. As such, I examine the impact of state-level marriage equality prior to the national ruling on state suicides rates—a proxy measure of the wellbeing of individuals— for males 18 and younger (arguably the most at risk population by gay discriminatory policies). The average state suicide rate for males 18 and younger is hypothesized to decline with legalization of marriage equality. I find robust evidence supporting this hypothesis, signaling that discrimination negatively affects the wellbeing of disadvantaged individuals.
+
+I exploit state and year variation in same-sex marriage legalization in order to perform the analysis, implementing state and year fixed effects as well as state-specific linear time trends. The main threat to this analysis stems from individual state attributes dictating both marriage equality status as well as trends in suicide rates, biasing the coefficient of interest. By implementing a difference-in-difference (DiD) strategy with state-specific linear time trends, I compare each individual state to itself before and after same-sex legalization. Thus, the model accounts for anything that remains constant in that state through time that may correlate with factors influencing both state suicide rates and legalization of same-sex marriage, such as geographic location. The specification also controls for yearly shocks affecting the nation, like the economic downturn in 2008 and the subsequent recession. Moreover, state-specific linear time trends attempt to further mitigate correlation between state marriage-equality laws and any other state trends (e.g. an increase in progressive views) that might dictate the suicide rate by state.
+
+#### Data and Method
+Multiple Cause-of-Death Public Use Files, accessed [here](http://wonder.cdc.gov/mcd.html), provide data on suicide rates. Data on [state unemployment](http://beta.bls.gov/dataQuery/find?fq=survey:[la]&q=la), and [income per capita](https://www.bea.gov/newsreleases/relsarchivespi.htm) are utilized as controls, as well as the lag of state unemployment. Lastly, data on same-sex marriage legalization is available [online](http://gaymarriage.procon.org/view.resource.php?resourceID=004857) and verified with news articles. For each state, I note the month, year and method of legalization of marriage equality. This notebook uses finalized data sets. Contact me for details on how I compiled the finalized data sets.
+
+I export number of suicides and population per state per year (1999 - 2014) to construct state suicide rates per 100,000 for males 18 and under. I choose to restrict my analysis to males because females depict different patterns in suicide, which would lead to more noisy data. Moreover, youth may be considered the population most at risk for suicide due to social isolation and other discriminating factors. The Center for Disease Control and Prevention suppresses deaths that are below 10 for each observation in its exported files due to privacy concerns. As such, all missing observations take on the value 10, which creates an upper bound for the estimated coefficient of interest. Further, I weight each observation by the state’s fraction of the nationwide population for a particular year, so that all weights for each year (1999 - 2014) sum to 1.
+
+The ‘Treatment’ variable is coded such that states that legalized same-sex marriage before Jan. 2015 take on a value ranging from 0 to 1, depending on the fraction the year for which marriage equality is legal. I only consider treatment states before 2015 because the Supreme Court legalized marriage equality across the nation mid-way through the year, confounding analysis for 2015.
+
+To further mitigate endogeniety, I also subset my sample to states that only legalized same-sex marriage by state court decision (vs. popular vote or legislature). The distinction between court-only states vs. legislature or popular vote states is important because legalization of gay marriage by court-only decision is plausibly more exogenous than popular vote or legislature decisions. Court decisions have a greater level of uncertainty and thus are less likely to be strongly influenced by public sentiments, or other state factors that influence both marriage equality and suicide rates in a state. Thus, restricting the sample hones in on a true causal effect.
+
+I regress log of suicide rate per 100,000 on the treatment variable first implementing two-way fixed effects only for unweighted and weighted observations for all states followed by court-decision only states. I add each control variable one by one so that in total there are 5 models for each unweighted/weighted and all-states/court-only states combination. Then, I perform a similar analysis including two-way fixed effects and state-specific linear time trends. Cluster robust standard errors are utilized in all regressions.
+
+#### Outline
+
+1 - Introduction
+
+2 - [Summary statistics](https://github.com/florezn/marriage-equality-analysis/blob/master/Summary_Statistics.ipynb)
+
+3 - [DiD analysis](https://github.com/florezn/marriage-equality-analysis/blob/master/DiD_Analysis.ipynb)
+
+4 - [DiD with state-specific linear time trends analysis](https://github.com/florezn/marriage-equality-analysis/blob/master/DiD_lin_trends.ipynb)
+
+5 - [Interpretation and concluding remarks](https://github.com/florezn/marriage-equality-analysis/blob/master/Interpretation_concluding_remarks.ipynb)
+
